@@ -14,16 +14,25 @@ http://stewart.bracken.bz
 ### Example Usage:
 
 function love.load()
+
 	myAtlas = require("mytextureatlas")
+	
 	batch = love.graphics.newSpriteBatch( myAtlas.texture, 100, "stream" )
+	
 end
 
 function love.draw()
+
 	batch:clear()
+	
 	batch:bind()
+	
 		batch:add( myAtlas.quads['mySpriteName'], love.mouse.getX(), love.mouse.getY() )
+		
 	batch:unbind()
+	
 	love.graphics.draw(batch)
+	
 end
 
 
