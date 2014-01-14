@@ -12,27 +12,17 @@ http://stewart.bracken.bz
 3. After publishing, place both the generated lua and image file into your game's folder and require() the lua file.
 
 ### Example Usage:
-
+```lua
 function love.load()
-
 	myAtlas = require("mytextureatlas")
-	
 	batch = love.graphics.newSpriteBatch( myAtlas.texture, 100, "stream" )
-	
 end
 
 function love.draw()
-
 	batch:clear()
-	
 	batch:bind()
-	
 		batch:add( myAtlas.quads['mySpriteName'], love.mouse.getX(), love.mouse.getY() )
-		
 	batch:unbind()
-	
 	love.graphics.draw(batch)
-	
 end
-
-
+```
